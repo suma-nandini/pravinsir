@@ -20,7 +20,7 @@ rel="stylesheet">
 
 body
 {
-height:100vh;
+min-height:100vh;
 overflow:hidden;
 position:relative;
 font-family:'Poppins',sans-serif;
@@ -230,6 +230,8 @@ min-height:100px;
 display:flex;
 align-items:center;
 justify-content:center;
+white-space:pre-line;
+text-align:center;
 }
 
 
@@ -261,6 +263,52 @@ transform:scale(1.05);
 
 .message{
 transition:opacity .2s;
+}
+
+@media (max-width: 600px){
+
+.title{
+top:25px;
+font-size:48px;
+}
+
+.subtitle{
+top:85px;
+font-size:20px;
+padding:0 15px;
+}
+
+.card{
+width:92%;
+max-width:500px;
+top:58%;
+padding:22px;
+}
+
+.message{
+font-size:22px;
+line-height:1.4;
+min-height:140px;
+}
+
+.buttons{
+gap:10px;
+}
+
+.buttons button{
+flex:1;
+font-size:15px;
+padding:12px;
+}
+
+.cloud{
+transform:scale(.7);
+}
+
+.c3{
+display:none;
+}
+
 }
 
 </style>
