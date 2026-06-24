@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+<title>For You ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;500;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body
+{
+height:100vh;
+overflow:hidden;
+position:relative;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(90deg,#ff69b4,#d77ff2,#8b7cf6,#55c7ff,#87e8b0,#ffe07a);
+background-size:300% 300%;
+animation:gradientMove 20s ease infinite;
+}
+
+/* animated background */
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+
+/* dreamy glow */
+body::before{
+content:"";
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at 20% 20%,rgba(255,255,255,.35) 0,transparent 25%),
+radial-gradient(circle at 80% 30%,rgba(255,255,255,.25) 0,transparent 25%),
+radial-gradient(circle at 70% 80%,rgba(255,255,255,.3) 0,transparent 25%);
+filter:blur(70px);
+z-index:1;
+}
+
+body::after{
+content:"";
+position:absolute;
+inset:0;
+background-image:radial-gradient(rgba(255,255,255,.9) 1px,transparent 1px);
+background-size:50px 50px;
+opacity:.5;
+z-index:2;
+}
+
+/* title */
+.title{
+position:absolute;
+top:90px;
+width:100%;
+text-align:center;
+font-family:'Dancing Script',cursive;
+font-size:90px;
+color:white;
+text-shadow:0 0 10px white, 0 0 25px rgba(255,255,255,.7);
+z-index:10;
+}
+
+
+/* subtitle */
+
+.subtitle{
+position:absolute;
+top:220px;
+width:100%;
+text-align:center;
+font-family:'Dancing Script',cursive;
+font-size:30px;
+font-weight:600;
+color:white;
+z-index:15;
+opacity:.9;
+}
+
+
+/* sparkling stars */
+
+.star{
+position:absolute;
+color:white;
+font-size:18px;
+opacity:.9;
+text-shadow:0 0 5px currentColor,0 0 10px currentColor;
+animation:twinkle 2s infinite alternate;
+z-index:10;
+pointer-events:none;
+}
+
+@keyframes twinkle{
+from{
+opacity:.3;
+transform:scale(.8);
+}
+to{
+opacity:1;
+transform:scale(1.3);
+}
+}
+
+
+
+/* fluffy clouds */
+
+.cloud{
+position:absolute;
+width:260px;
+height:90px;
+border-radius:100px;
+box-shadow:0 0 20px rgba(255,255,255,.4);
+background:rgba(255,255,255,.22);
+backdrop-filter:blur(20px);
+z-index:5;
+}
+
+
+.cloud::before{
+content:"";
+position:absolute;
+width:120px;
+height:120px;
+background:inherit;
+border-radius:50%;
+top:-35px;
+left:35px;
+}
+
+
+.cloud::after{
+content:"";
+position:absolute;
+width:140px;
+height:140px;
+background:inherit;
+border-radius:50%;
+top:-50px;
+right:25px;
+}
+
+
+
+/* cloud positions */
+.c1{
+top:70%;
+left:5%;
+background:linear-gradient(135deg,rgba(255,192,203,.8),rgba(255,255,255,.8));
+animation:moveCloud1 40s linear infinite;
+}
+
+
+.c2{
+top:78%;
+left:40%;
+background:linear-gradient(135deg,rgba(216,180,255,.8),rgba(255,192,203,.7));
+animation:moveCloud2 50s linear infinite;
+}
+
+
+.c3{
+top:63%;
+left:70%;
+background:linear-gradient(135deg,rgba(184,247,255,.8),rgba(255,255,255,.8));
+animation:moveCloud3 45s linear infinite;
+}
+
+
+
+/* movement */
+
+@keyframes moveCloud1{
+50%{
+transform:translateX(80px) translateY(-10px);
+}
+}
+
+@keyframes moveCloud2{
+50%{
+transform:translateX(-60px) translateY(10px);
+}
+}
+
+@keyframes moveCloud3{
+50%{
+transform:translateX(70px) translateY(-15px);
+}
+}
+
+/* Message Card */
+
+.card{
+position:absolute;
+top:53%;
+left:50%;
+transform:translate(-50%,-50%);
+width:500px;
+min-height:220px;
+padding:35px;
+border-radius:30px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.25);
+box-shadow:0 8px 40px rgba(0,0,0,.15);
+text-align:center;
+z-index:20;
+}
+
+
+.message{
+color:white;
+font-size:28px;
+font-family:'Dancing Script',cursive;
+min-height:100px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+
+.buttons{
+display:flex;
+justify-content:space-between;
+margin-top:30px;
+}
+
+
+.buttons button{
+border:none;
+outline:none;
+padding:12px 28px;
+border-radius:50px;
+background:rgba(255,255,255,.25);
+color:white;
+font-size:18px;
+cursor:pointer;
+backdrop-filter:blur(10px);
+transition:.3s;
+}
+
+
+.buttons button:hover{
+background:rgba(255,255,255,.4);
+transform:scale(1.05);
+}
+
+.message{
+transition:opacity .2s;
+}
+
+</style>
+</head>
+
+
+
+
+<body>
+<div class="title">For You ❤️</div>
+<div class="subtitle">Some things I never said, but always felt...</div>
+
+<div class="card">
+<div class="message" id="message">To Left Side SME sir kastapadi chesa motham chadavandi</div>
+<div class="buttons">
+<button onclick="prevMsg()">⬅ Previous</button>
+<button onclick="nextMsg()">Next ➡</button>
+</div>
+</div>
+
+<!-- clouds -->
+<div class="cloud c1"></div>
+<div class="cloud c2"></div>
+<div class="cloud c3"></div>
+
+
+<script>
+const symbols = ['✦','✧','✨','⋆'];
+const colors=['#ffffff','#ffd6f6','#ffb6c1','#fff4a3','#b8f7ff','#d8b4ff'];
+for(let i=0;i<60;i++){
+const star =document.createElement("div");
+star.className = "star";
+star.innerHTML =
+symbols[Math.floor(Math.random()*symbols.length)];
+star.style.left =Math.random()*100 + "%";
+star.style.top =Math.random()*100 + "%";
+star.style.fontSize =(8 +Math.random()*12)+ "px";
+star.style.color= colors[Math.floor(Math.random()*colors.length)];
+star.style.animationDelay =
+Math.random()*2+ "s";
+document.body.appendChild(star);
+}
+
+const messages=[
+`Coding skills vunna person vunte anthe mari😂`,
+`100 ways try chesina impress avvakapothe......
+I'll find the 101st way to impress you 😌✨Impress chestu vundataniki ee life time saripodemo !`,
+`Rachipoyana aa roju 😂
+Cheppaga... mood swings yekkuve naku.
+Kompateesi aa roju nenu cheppinavi anni gurtu pettukuni \"ee pilla yenti ila vundhi\" ani bayapadtunnara? Relax sir...Nenu antha dangerous kaadhu.....ippatiki😱😂`,
+`Friend na?
+Girlfriend na?
+Naku telidhu...
+Mee istam vachinattu anukondi 😌
+Naku matram...Meeru ante istam ❤️`,
+`Yenduko naku possessiveness aythe antha ledu...Happy ga vundandi chalu 😊`,
+`Meetho matladali ante...Eiffel Tower antha opika vundali telusa! Reply osthe Himalayas antha santosham 😌`,
+`I am independent... but if I become a little clingy with one person, that person is none other than you 😂❤️`,
+`millenial genz,
+non expressive too expressive,
+studious hilarious ,
+yellowish skin tone dusky,
+such a strange combo kadha😂`,
+`chala space ivvali anipistadhi , mee plans disturb cheyakudadhu anipistadhi kani aa plans lo nen kuda vunte bagundunu anipistadhi yenduku?`,
+`Drama queen anna kuda mee deggera inka drama cheyali anipistadhi `,
+`idhedo coding patha company lo chesi vunte hike vachedemo kani mimmalni kalise danni kadhu ga!`,
+`okosari adagali anipistadhi meeru 10th class ammai ki inter 2nd yr question paper istunnaru ani ..ivvatam tappu kadhu kani koncham help cheyali kadha copy cheyataniki ..na kosam koncham easy ga vundochu ga😂`,
+`You are the best,you deserve the best and I wanted to be the best telusa`,
+`left side intha bagunnapudu right side yenduku chusano ..ila anipistundhi left side sme sir 😂`,
+`😂 Intha istam vunte...yem antaru?
+System Error: Other words not found. 🤖❤️`,
+`Nijam cheppalante...
+Nenu mimmalni ardham chesukovadaniki try chestunna, marchadaniki kaadhu.
+Busy ga unna, space kavali anipinchina, that's okay.
+Mee gurinchi na opinion matram yeppudu maaraledhu.
+You are a wonderful person, and I genuinely wish the best for you.
+Take care sir 😊`
+];
+let index=0;
+const msg=document.getElementById("message");
+
+function nextMsg(){
+index=(index+1)%messages.length;
+msg.style.opacity=0;
+setTimeout(()=>{msg.innerHTML=messages[index];
+msg.style.opacity=1;
+},200);
+}
+
+
+function prevMsg(){
+ index=(index-1+ messages.length) %messages.length;
+msg.style.opacity=0;
+setTimeout(()=>{msg.innerHTML=messages[index];
+msg.style.opacity=1;
+},200);
+}
+
+</script>
+
+</body>
+
+
+</html>
